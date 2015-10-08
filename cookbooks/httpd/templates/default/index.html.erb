@@ -1,0 +1,6 @@
+<h1>MY FIRST COOKBOOK</h1>
+<h2>Hello <%= node['httpd']['greeting'] %></h2>
+<p>My name is <%= node['machinename'] %>.</p>
+
+<p> We love <%= @site_name %></p>
+<p>Served from <%= node['ipaddress'] %>:<%= @port %></p>

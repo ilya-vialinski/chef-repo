@@ -9,4 +9,4 @@ validation_client_name   "sap-web-validator"
 validation_key           "#{current_dir}/sap-web-validator.pem"
 chef_server_url          "https://api.opscode.com/organizations/sap-web"
 cookbook_path            ["#{current_dir}/../cookbooks"]
-install_sh="https://www.opscode.com/chef/install.sh"
+install_sh = "https://www.opscode.com/chef/install.sh"

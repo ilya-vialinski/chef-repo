@@ -35,7 +35,19 @@ bash "extract_module" do
     EOH
 end
 
-execute "startup.sh" do
-  cwd "/etc/bamboo/atlassian-bamboo-5.9.4/bin"
-  command "./startup.sh"
+template "/etc/init.d/bamboo" do
+  source "bamboo_startup"
+  mode "0755"
+  action :create
+end
+
+bash "extract_module" do
+  code <<-EOH
+    chmod \+x /etc/init.d/bamboo
+    sudo /sbin/chkconfig --add bamboo
+    EOH
+end
+
+service "bamboo" do
+  action :start
 end

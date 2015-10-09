@@ -44,7 +44,7 @@ end
 bash "extract_module" do
   code <<-EOH
     chmod \+x /etc/init.d/bamboo
-    sudo /sbin/chkconfig --add bamboo
+    /sbin/chkconfig --add bamboo
     EOH
 end
 
